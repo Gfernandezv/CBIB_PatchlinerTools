@@ -7,7 +7,7 @@
 // ------------------------------------------------------------
 Function plot_amp(mode)
     String mode
-
+	 
     String current_folder  = GetDataFolder(1)
     String analysis_folder = current_folder + "Analysis:"
     String packages_folder = current_folder + "Packages:"
@@ -15,7 +15,8 @@ Function plot_amp(mode)
     NVAR/Z temp    = $(packages_folder + "ramp_temp")
     String wbase   = "*_fitpeak_" + num2str(temp)
 
-    SetDataFolder analysis_folder
+ 
+    SetDataFolder $analysis_folder
 
     strswitch(mode)
         case "raw":
@@ -40,19 +41,19 @@ Function plot_amp(mode)
     endif
 
     // Resolve result wave before building panel
-    String mut_name = FolderNameFromPath(ParentFolder(current_folder, 4))
+    String mut_name = FolderNameFromPath(ParentFolder(current_folder, 3))
     mut_name = ReplaceString("'", mut_name, "")
-    SVAR/Z traces_prefix = $(ParentFolder(current_folder, 3) + "Packages:Wave_prefix")
-    SVAR/Z chan           = $(ParentFolder(current_folder, 1) + "Packages:chanexp")
+    SVAR/Z traces_prefix = $(ParentFolder(current_folder, 2) + "Packages:Wave_prefix")
+    SVAR/Z chan           = $(ParentFolder(current_folder, 0) + "Packages:chanexp")
     String maxwave_name  = mut_name + "_" + traces_prefix + "_" + chan + "_Amp"
     String amp_folder    = CheckDataFolder(ParentFolder(current_folder, 2) + "Ramp_Analysis")
     String amp_name      = amp_retreiver(maxwave_name, 6, 20, 5, amp_folder)
     Wave maxwave         = $(amp_folder + amp_name)
-
+	 
     Wave w = $y_wave_name
     MakeTwoPanels_plot_amp(w, title, maxwave)
 
-    SetDataFolder current_folder
+	 SetDataFolder $current_folder
 End
 
 
