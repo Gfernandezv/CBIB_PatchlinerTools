@@ -17,7 +17,7 @@ Targets the electrophysiology research community. Intended for submission to [Ig
 
 1. Copy all `.ipf` files into your Igor Pro **User Procedures** folder  
    (`Igor Pro User Files/User Procedures/`)
-2. In Igor Pro: **File → Open File → Procedure**, open `Analysis_Menus.ipf`  
+2. In Igor Pro: **File → Open File → Procedure**, open `PLT_Menus.ipf`  
    (remaining modules are included automatically via `#include` — _pending_)
 3. From the menu bar: **Analysis → Nanion → Panel**
 
@@ -38,15 +38,14 @@ Targets the electrophysiology research community. Intended for submission to [Ig
 
 | File | Responsibility |
 |---|---|
-| `Analysis_Menus.ipf` | Entry point, main panel, tab control, menu functions |
-| `Analysis_Utils.ipf` | Logger, global variable helpers, folder path helpers, wave utilities, graph window helpers |
-| `Analysis_Common.ipf` | Signal preprocessing, wave organization (`sorting_hat`), passive property estimation (`pasivas`) |
-| `Analysis_Ramp.ipf` | Ramp protocol analysis (`tempresponse`) |
-| `Analysis_IV.ipf` | IV protocol analysis (`AnalizarIVporCanal`), IV and raw trace graphs |
-| `Analysis_Amplitude.ipf` | Amplitude extraction from ramp fits, result wave management, cursor hook |
-| `Analysis_IVCurves.ipf` | Reversal potential, chord conductance, G-V curve, Boltzmann fit, IV normalization |
-| `Analysis_Kinetics.ipf` | Temperature-dependent kinetics: Q10 and Arrhenius analysis |
-| `Analysis_NMExport.ipf` | NeuroMatic export: copies all Patchliner channels into a single NM-compatible folder |
+| `PLT_Menus.ipf` | Entry point, main panel, tab control, menu functions |
+| `PLT_Utils.ipf` | Logger, global variable helpers, folder path helpers, wave utilities, graph window helpers |
+| `PLT_Common.ipf` | Signal preprocessing, wave organization (`sorting_hat`), passive property estimation (`pasivas`) |
+| `PLT_Core.ipf` | Common visualization (`plot_raw_panel`, `plot_stim`, `plot_trace`), ramp analysis (`tempresponse`), IV visualization (`IV_graph`), IV analysis (`AnalizarIVporCanal`) |
+| `PLT_Amplitude.ipf` | Amplitude extraction from ramp fits, result wave management, cursor hook |
+| `PLT_IVCurves.ipf` | Reversal potential, chord conductance, G-V curve, Boltzmann fit, IV normalization |
+| `PLT_Kinetics.ipf` | Temperature-dependent kinetics: Q10 and Arrhenius analysis |
+| `PLT_NMExport.ipf` | NeuroMatic export: copies all Patchliner channels into a single NM-compatible folder |
 
 ---
 
