@@ -6,6 +6,22 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v0.2] — 2026-07-02
+
+### Added
+- `Analysis_NMExport.ipf` — NeuroMatic export module
+  (`ExportChannelToNM`, `NMExport_InitFolder`,
+  `NMExport_CopyWaves`, `NMExport_ListSubfolders`)
+- Tab "Export" in main panel
+
+### Changed
+- `Analysis_Menus.ipf` — IV tab permanently disabled (under development)
+- `Analysis_Utils.ipf` — added `btnExportNM` case in `LogButtonProc`
+
+### Pending
+- Voltage command export — requires reconstruction
+  from `_Amp`/`_Dur` segment pairs
+
 ## [0.1] — 2026-06-15
 
 ### Added

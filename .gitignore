@@ -1,0 +1,7 @@
+# MkDocs build output (always generated, never commit)
+site/
+
+# MkDocs source — held back until screenshots are ready (see docs/PLACEHOLDERS.md)
+# Remove these two lines once images are in place, then commit docs/ and mkdocs.yml
+docs/
+mkdocs.yml
