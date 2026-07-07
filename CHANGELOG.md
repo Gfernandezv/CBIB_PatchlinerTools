@@ -5,6 +5,25 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
+## [v0.3] — 2026-07-07
+
+### Changed
+- Renamed all modules from `Analysis_*.ipf` to `PLT_*.ipf`
+  (Patchliner Tools unified prefix)
+- `Analysis_Ramp.ipf` + `Analysis_IV.ipf` merged into `PLT_Core.ipf`
+
+### Refactored
+- `SubtractBaseline()` moved to `PLT_Utils`
+- `ListSubfolders()` generalized in `PLT_Utils`; replaces
+  `NMExport_ListSubfolders()` and manual `DataFolderDir` parsing
+- `findamp()` receives experiment context as explicit parameters (R4)
+- `plot_stim()` uses `place_cursors()` — all cursor placement via helper
+- `amp_saver()` reads `nT`, `t0`, `dt` from `root:Packages` globals
+- `MakeTwoPanels_plot_amp()` indentation normalized
+
+### Docs
+- README and MkDocs updated to PLT_ naming
+---
 
 ## [v0.2] — 2026-07-02
 
